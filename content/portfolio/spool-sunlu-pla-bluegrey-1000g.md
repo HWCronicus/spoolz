@@ -5,6 +5,8 @@ showonlyimage = false
 date="2025-08-09"
 title = "Sunlu PLA 1000g blue/grey spool"
 [params]
+  brand = 'Sunlu'
+  filament_type = 'PLA'
   spool_type = 'dark_plastic'
 +++
 

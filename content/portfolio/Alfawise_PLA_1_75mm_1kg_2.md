@@ -6,6 +6,8 @@ date = "2024-04-30T22:00:00Z"
 title = "Alfawise PLA (Plastic Spool 2)"
 [params]
   spool_type = 'dark_plastic'
+  brand = 'Alfawise'
+  filament_type = 'PLA'
 +++
 
 -   Printing temp: 195-220C

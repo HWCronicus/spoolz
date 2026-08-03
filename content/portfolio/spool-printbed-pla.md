@@ -5,6 +5,8 @@ showonlyimage = false
 date="2024-08-05T11:01:17+0200"
 title = "PrintBed PLA"
 [params]
+  brand = 'PrintBed'
+  filament_type = 'PLA'
   spool_type = 'cardboard'
 +++
 

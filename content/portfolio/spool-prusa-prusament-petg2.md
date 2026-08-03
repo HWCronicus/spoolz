@@ -5,6 +5,8 @@ showonlyimage = false
 date="Mon Apr 01 17:08:00 EST 2024"
 title = "Prusa Prusament PETG"
 [params]
+  brand = 'Prusament'
+  filament_type = 'PETG'
   spool_type = 'dark_plastic'
 +++
 

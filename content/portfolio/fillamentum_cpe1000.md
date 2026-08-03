@@ -6,6 +6,8 @@ date = "2024-03-20T15:45:50+0100"
 title = "Fillamentum CPE HG100"
 [params]
   spool_type = 'light_plastic'
+  brand = 'Fillamentum'
+  filament_type = 'Co-Polyester'
 +++
 
 -   Printing temp: 255–275C

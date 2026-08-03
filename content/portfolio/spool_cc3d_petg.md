@@ -6,6 +6,8 @@ date = "2025-03-03T10:29:59+0100"
 title = "CC3D PETG"
 [params]
   spool_type = 'dark_plastic'
+  brand = 'CC3D'
+  filament_type = 'PETG'
 +++
 
 * Printing Temp: 230-260C

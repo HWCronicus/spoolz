@@ -6,6 +6,8 @@ date="2023-04-25T13:31:27+0200"
 title = "3DJake rPLA Cardboard spool"
 [params]
   spool_type = 'cardboard'
+  brand = '3DJake'
+  filament_type = 'rPLA'
 +++
 
 * Printing temp: 200 C – 220 C

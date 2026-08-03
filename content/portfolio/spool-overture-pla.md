@@ -5,6 +5,8 @@ showonlyimage = false
 date="Mon Apr 01 17:08:00 EST 2024"
 title = "Overture PLA"
 [params]
+  brand = 'Overture'
+  filament_type = 'PLA'
   spool_type = 'cardboard'
 +++
 

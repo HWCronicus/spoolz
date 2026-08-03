@@ -5,6 +5,8 @@ showonlyimage = false
 date="2026-05-25"
 title = "Sunlu HS Matte PETG 1KG"
 [params]
+  brand = 'Sunlu'
+  filament_type = 'PETG'
   spool_type = 'dark_plastic'
 +++
 

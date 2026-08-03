@@ -5,6 +5,8 @@ showonlyimage = false
 date="2025-08-07"
 title = "Ensina Silk PLA 1KG"
 [params]
+  brand = 'Ensina'
+  filament_type = 'PLA'
   spool_type = 'cardboard'
 +++
 

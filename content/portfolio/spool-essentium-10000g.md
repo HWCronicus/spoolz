@@ -4,6 +4,9 @@ image = "img/portfolio/essentium_spool_scheme.png"
 showonlyimage = false
 date = "2021-10-23T09:20:00Z"
 title = "Essentium 10kg spool"
+[params]
+	brand = 'Essentium'
+	filament_type = 'N/A'
 +++
 
 * Empty spool weight: 1385 g

@@ -6,6 +6,8 @@ date = "2024-01-05T15:30:00Z"
 title = "Creality 3D PLA White"
 [params]
   spool_type = 'dark_plastic'
+  brand = 'Creality 3D'
+  filament_type = 'PLA'
 +++
 
 -   Printing temp: 195-220C

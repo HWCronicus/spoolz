@@ -5,6 +5,8 @@ showonlyimage = false
 date="2026-05-21"
 title = "SIDDAMENT Matte PLA 1KG"
 [params]
+  brand = 'SIDDAMENT'
+  filament_type = 'PLA'
   spool_type = 'light_plastic'
 +++
 

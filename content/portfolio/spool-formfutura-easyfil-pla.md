@@ -5,6 +5,8 @@ showonlyimage = false
 date="2023-05-30T09:32:48+0200"
 title = "Formfutura EasyFil PLA"
 [params]
+  brand = 'Formfutura'
+  filament_type = 'PLA'
   spool_type = 'light_plastic'
 +++
 

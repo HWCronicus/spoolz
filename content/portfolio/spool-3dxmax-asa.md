@@ -6,6 +6,8 @@ date="2023-07-23T18:00:00+0400"
 title = "3DXTECH ASA"
 [params]
   spool_type = 'dark_plastic'
+  brand = '3DXTECH'
+  filament_type = 'ASA'
 +++
 
 * Printing temp: 235 C – 255 C

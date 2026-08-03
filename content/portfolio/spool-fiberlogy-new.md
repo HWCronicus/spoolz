@@ -5,6 +5,8 @@ showonlyimage = false
 date = "2025-03-03T14:17:28+0100"
 title = "Fiberlogy ASA"
 [params]
+  brand = 'Fiberlogy'
+  filament_type = 'ASA'
   spool_type = 'light_plastic'
 +++
 

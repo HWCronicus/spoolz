@@ -6,6 +6,8 @@ date = "2025-04-01T15:00:00Z"
 title = "Polymaker Polysonic PLA PRO (Cardboard Spool)"
 [params]
   spool_type = 'cardboard'
+  brand = 'Polymaker'
+  filament_type = 'PLA'
 +++
 
 -   Printing temp: 190C - 230C

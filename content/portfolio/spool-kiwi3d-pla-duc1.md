@@ -5,6 +5,8 @@ showonlyimage = false
 date = "2021-10-23T09:20:00Z"
 title = "Kiwi3D PLA Like-Marble"
 [params]
+  brand = 'Kiwi3D'
+  filament_type = 'PLA'
   spool_type = 'light_plastic'
 +++
 

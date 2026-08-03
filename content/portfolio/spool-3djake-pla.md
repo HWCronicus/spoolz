@@ -6,6 +6,8 @@ date="2023-05-09T11:42:11+0200"
 title = "3DJake ecoPLA spool"
 [params]
   spool_type = 'dark_plastic'
+  brand = '3DJake'
+  filament_type = 'ecoPLA'
 +++
 
 * Printing temp: 195 C – 215 C

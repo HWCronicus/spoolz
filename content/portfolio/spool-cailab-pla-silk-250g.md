@@ -5,7 +5,9 @@ showonlyimage = false
 date="2026-05-21"
 title = "CAILAB Silk PLA 250g Cardboard"
 [params]
-  spool_type = 'cardboard'
+  brand = 'CAILAB'
+  filament_type = ''
+  spool_type = 'PLA'
 +++
 
 * Printing temp: 210 C – 240 C

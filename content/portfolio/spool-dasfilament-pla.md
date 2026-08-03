@@ -5,6 +5,8 @@ showonlyimage = false
 date="Mon Apr 01 17:08:00 EST 2024"
 title = "DasFilament PLA"
 [params]
+  brand = 'DasFilament'
+  filament_type = 'PLA'
   spool_type = 'dark_plastic'
 +++
 

@@ -5,6 +5,8 @@ showonlyimage = false
 date="2024-05-02T13:37:00+0200"
 title = "Jayo PLA Cardboard spool"
 [params]
+  brand = 'Jayo'
+  filament_type = 'PLA'
   spool_type = 'cardboard'
 +++
 

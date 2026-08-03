@@ -5,6 +5,8 @@ showonlyimage = false
 date="2023-05-23T10:56:22+0200"
 title = "Polymaker PolyTerra PLA"
 [params]
+  brand = 'Polymaker'
+  filament_type = 'PLA'
   spool_type = 'cardboard'
 +++
 

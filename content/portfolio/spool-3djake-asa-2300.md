@@ -6,6 +6,8 @@ date = "2025-03-04T10:49:07+0100"
 title = "3DJake ASA Black 2300g"
 [params]
   spool_type = 'dark_plastic'
+  brand = '3DJake'
+  filament_type = 'ASA'
 +++
 
 * Printing temp: 210-250C

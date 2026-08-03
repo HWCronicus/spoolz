@@ -6,6 +6,8 @@ date = "2024-03-18T15:00:00Z"
 title = "FormFutura ReForm - rPLA (Cardboard Spool)"
 [params]
   spool_type = 'cardboard'
+  brand = 'FormFutura'
+  filament_type = 'rPLA'
 +++
 
 -   Printing temp: 200-230C

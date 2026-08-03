@@ -5,6 +5,8 @@ showonlyimage = false
 date="2025-08-07"
 title = "Sunlu 250g PLA blue/grey molded plastic"
 [params]
+  brand = 'Sunlu'
+  filament_type = 'PLA'
   spool_type = 'dark_plastic'
 +++
 

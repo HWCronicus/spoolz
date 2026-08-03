@@ -5,6 +5,8 @@ showonlyimage = false
 date = "2026-05-16T12:35:27Z"
 title = "DevilDesign"
 [params]
+  brand = 'DevilDesign'
+  filament_type = 'PETG'
   spool_type = 'light_plastic'
 +++
 

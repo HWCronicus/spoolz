@@ -5,6 +5,8 @@ showonlyimage = false
 date = "2021-10-23T09:20:00Z"
 title = "ESun ABS+ Black"
 [params]
+  brand = 'ESun'
+  filament_type = 'ABS+'
   spool_type = 'light_plastic'
 +++
 

@@ -5,6 +5,8 @@ showonlyimage = false
 date = "2025-04-27T18:01:30+0200"
 title = "ESun PETG (cardboard spool)"
 [params]
+  brand = 'ESun'
+  filament_type = 'PETG'
   spool_type = 'cardboard'
 +++
 

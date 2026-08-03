@@ -5,6 +5,8 @@ showonlyimage = false
 date="Fri Nov 26 12:12:09 EST 2021"
 title = "KVP Stellar Black ABS"
 [params]
+  brand = 'KVP'
+  filament_type = 'ABS'
   spool_type = 'dark_plastic'
 +++
 

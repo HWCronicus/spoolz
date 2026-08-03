@@ -5,6 +5,8 @@ showonlyimage = false
 date = "2024-01-26T15:18:30+0100"
 title = "PETG Prusa Galaxy Black"
 [params]
+  brand = 'Prusament'
+  filament_type = 'PETG'
   spool_type = 'dark_plastic'
 +++
 

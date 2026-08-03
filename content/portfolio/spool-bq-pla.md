@@ -6,6 +6,8 @@ date = "2024-01-26T15:15:01+0100"
 title = "bq PLA"
 [params]
   spool_type = 'light_plastic'
+  brand = 'bq'
+  filament_type = 'PLA'
 +++
 
 * Printing temp: 205

@@ -6,6 +6,8 @@ date = "2024-04-30T21:30:00Z"
 title = "3DE Premium PLA (Plastic Spool)"
 [params]
   spool_type = 'dark_plastic'
+  brand = 'Afinia 3D'
+  filament_type = 'PLA'
 +++
 
 -   Printing temp: 195-210C

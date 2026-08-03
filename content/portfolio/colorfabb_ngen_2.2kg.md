@@ -6,6 +6,8 @@ date = "2024-03-18T15:00:00Z"
 title = "colorFabb nGen"
 [params]
   spool_type = 'dark_plastic'
+  brand = 'Colorfab'
+  filament_type = 'Co-Polyester'
 +++
 
 -   Printing temp: 220-240C

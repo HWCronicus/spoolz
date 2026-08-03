@@ -5,6 +5,8 @@ showonlyimage = false
 date="2026-05-21"
 title = "DEEPLEE Rapid PLA+ 1KG Cardboard"
 [params]
+  brand = 'DEEPLEE'
+  filament_type = 'PLA+'
   spool_type = 'cardboard'
 +++
 

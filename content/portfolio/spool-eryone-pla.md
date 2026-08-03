@@ -5,6 +5,8 @@ showonlyimage = false
 date="Mon Dec 13 17:01:16 EST 2021"
 title = "Eryone PLA Matte"
 [params]
+  brand = 'Eryone'
+  filament_type = 'PLA'
   spool_type = 'dark_plastic'
 +++
 

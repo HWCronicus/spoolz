@@ -5,6 +5,8 @@ showonlyimage = false
 date="2025-12-14T15:51:52+0100"
 title = "Kingroon PLA 1000g"
 [params]
+  brand = 'Kingroon'
+  filament_type = 'PLA'
   spool_type = 'cardboard'
 +++
 

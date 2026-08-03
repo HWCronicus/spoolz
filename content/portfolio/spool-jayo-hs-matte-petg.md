@@ -5,6 +5,8 @@ showonlyimage = false
 date="2026-05-25"
 title = "Jayo HS Matte PETG 1100g"
 [params]
+  brand = 'Jayo'
+  filament_type = 'PETG'
   spool_type = 'dark_plastic'
 +++
 

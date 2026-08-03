@@ -6,6 +6,8 @@ date = "2025-03-03T10:15:49+0100"
 title = "Anycubic PETG"
 [params]
   spool_type = 'dark_plastic'
+  brand = 'Anycubic'
+  filament_type = 'PETG'
 +++
 
 - Printing temp: 230-240C

@@ -6,6 +6,8 @@ date="2024-08-05T12:32:40+0200"
 title = "Aurapol PLA"
 [params]
   spool_type = 'dark_plastic'
+  brand = 'Anycubic'
+  filament_type = 'PETG'
 +++
 
 * Printing temp: 210 C – 230 C

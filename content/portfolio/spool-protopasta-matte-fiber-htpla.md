@@ -5,6 +5,8 @@ showonlyimage = false
 date="2023-07-18T18:00:00+0400"
 title = "Protopasta Matte Fiber HTPLA"
 [params]
+  brand = 'Protopasta'
+  filament_type = 'HTPLA'
   spool_type = 'cardboard'
 +++
 

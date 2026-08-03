@@ -5,6 +5,8 @@ showonlyimage = false
 date = "2024-04-23T16:27:27Z"
 title = "SUNLU PLA"
 [params]
+  brand = 'Sunlu'
+  filament_type = 'PLA'
   spool_type = 'dark_plastic'
 +++
 

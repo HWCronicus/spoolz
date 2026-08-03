@@ -5,6 +5,8 @@ showonlyimage = false
 date="Fri Nov 26 12:12:09 EST 2021"
 title = "Fusion Filaments Plutonic Purple ABS 2.0"
 [params]
+  brand = 'Fusion Filaments'
+  filament_type = 'ABS'
   spool_type = 'dark_plastic'
 +++
 

@@ -5,6 +5,8 @@ showonlyimage = false
 date="2026-05-25"
 title = "Professional Lab PETG Black 1KG"
 [params]
+  brand = 'Professional Lab'
+  filament_type = 'PETG'
   spool_type = 'dark_plastic'
 +++
 

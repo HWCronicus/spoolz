@@ -6,6 +6,8 @@ date = "2024-03-18T15:00:00Z"
 title = "Polymaker PolyTerra PLA (Cardboard Spool)"
 [params]
   spool_type = 'cardboard'
+  brand = 'Polymaker'
+  filament_type = 'PLA'
 +++
 
 -   Printing temp: 190-230C

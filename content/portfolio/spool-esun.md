@@ -5,6 +5,8 @@ showonlyimage = false
 date = "Sat Oct 23 12:32:27 EDT 2021"
 title = "ESun PLA+"
 [params]
+  brand = 'ESun'
+  filament_type = 'PLA+'
   spool_type = 'dark_plastic'
 +++
 

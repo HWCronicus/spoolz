@@ -5,6 +5,8 @@ showonlyimage = false
 date = "2024-02-12T12:58:50+0100"
 title = "ESun PLA+ (cardboard spool)"
 [params]
+  brand = 'ESun'
+  filament_type = 'PLA+'
   spool_type = 'cardboard'
 +++
 

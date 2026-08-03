@@ -5,6 +5,8 @@ showonlyimage = false
 date = "2026-02-08T13:56:00Z"
 title = "Inland PLA Basics (Black)"
 [params]
+  brand = 'Inland'
+  filament_type = 'PLA'
   spool_type = 'cardboard'
 +++
 

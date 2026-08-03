@@ -5,6 +5,8 @@ showonlyimage = false
 date="2026-05-21"
 title = "ZYLtech ABS 1KG"
 [params]
+  brand = 'ZYLtech'
+  filament_type = 'ABS'
   spool_type = 'light_plastic'
 +++
 

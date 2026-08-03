@@ -5,6 +5,8 @@ showonlyimage = false
 date = "Sat Oct 23 12:32:27 EDT 2021"
 title = "KVP Koil Spool"
 [params]
+  brand = 'Keene Village Plastics'
+  filament_type = 'ABS'
   spool_type = 'light_plastic'
 +++
 ESun openable spool upcycled by KVP to serve as their refillable Koil spool

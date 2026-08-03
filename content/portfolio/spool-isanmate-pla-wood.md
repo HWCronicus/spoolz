@@ -5,6 +5,8 @@ showonlyimage = false
 date="2026-02-22T06:26:00+1300"
 title = "iSANMATE PLA Wood"
 [params]
+  brand = 'iSANMATE'
+  filament_type = 'PLA'
   spool_type = 'light_plastic'
 +++
 

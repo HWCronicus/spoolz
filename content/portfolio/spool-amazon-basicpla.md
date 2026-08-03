@@ -6,6 +6,8 @@ date="2023-05-10T09:36:35+0200"
 title = "Amazon Basic PLA"
 [params]
   spool_type = 'dark_plastic'
+  brand = 'Amazon Basic'
+  filament_type = 'PLA'
 +++
 
 * Printing temp: 190 C – 220 C

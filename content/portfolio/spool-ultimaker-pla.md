@@ -5,6 +5,8 @@ showonlyimage = false
 date="Mon May 24 17:23:00 EST 2023"
 title = "Ultimaker PLA"
 [params]
+  brand = 'Ultimaker'
+  filament_type = 'PLA'
   spool_type = 'light_plastic'
 +++
 

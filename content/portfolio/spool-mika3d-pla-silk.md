@@ -5,6 +5,8 @@ showonlyimage = false
 date="2025-08-07"
 title = "Mika3D Silk PLA 1KG"
 [params]
+  brand = 'Mika3D'
+  filament_type = 'PLA'
   spool_type = 'dark_plastic'
 +++
 

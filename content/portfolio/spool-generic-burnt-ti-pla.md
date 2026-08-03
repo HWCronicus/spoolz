@@ -5,6 +5,8 @@ showonlyimage = false
 date="2025-08-07"
 title = "Generic Burnt Titanium PLA 1KG"
 [params]
+  brand = 'Generic'
+  filament_type = 'PLA'
   spool_type = 'dark_plastic'
 +++
 

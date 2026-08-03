@@ -5,6 +5,8 @@ showonlyimage = false
 date="2024-08-05T12:34:34+0200"
 title = "Kingroon PLA"
 [params]
+  brand = 'Kingroon'
+  filament_type = 'PLA'
   spool_type = 'dark_plastic'
 +++
 

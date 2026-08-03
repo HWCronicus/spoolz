@@ -3,8 +3,10 @@ draft = false
 image = "img/portfolio/spool_fiberlogy_rounded.jpg"
 showonlyimage = false
 date="Mon Feb 24 20:27:00 EST 2025"
-title = "fiberlogy rounded spool (old) easy pla"
+title = "Fiberlogy rounded spool (old) easy pla"
 [params]
+  brand = 'Fiberlogy'
+  filament_type = 'PLA'
   spool_type = 'light_plastic'
 +++
 

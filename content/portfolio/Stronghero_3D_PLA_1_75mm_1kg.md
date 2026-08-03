@@ -5,6 +5,8 @@ showonlyimage = false
 date = "2024-04-30T22:00:00Z"
 title = "Stronghero 3D PLA"
 [params]
+  brand = 'Stronghero 3D'
+  filament_type = 'PLA'
   spool_type = 'dark_plastic'
 +++
 

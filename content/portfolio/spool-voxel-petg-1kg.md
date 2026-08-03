@@ -5,6 +5,8 @@ showonlyimage = false
 date = "2025-12-11T01:01:01Z"
 title = "Voxel PETG+"
 [params]
+  brand = 'Voxel'
+  filament_type = 'PETG+'
   spool_type = 'dark_plastic'
 +++
 

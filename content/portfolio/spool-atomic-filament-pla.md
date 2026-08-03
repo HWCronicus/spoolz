@@ -6,6 +6,8 @@ date="Sat Nov  6 13:42:42 EDT 2021"
 title = "Atomic Filaments Rose Gold PLA"
 [params]
   spool_type = 'light_plastic'
+  brand = 'Anycubic'
+  filament_type = 'PETG'
 +++
 
 * Printing temp: 190/230C

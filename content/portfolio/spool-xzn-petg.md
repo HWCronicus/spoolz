@@ -5,6 +5,8 @@ showonlyimage = false
 date="2025-08-07"
 title = "XZN PETG 1KG"
 [params]
+  brand = 'XZN'
+  filament_type = 'PETG'
   spool_type = 'cardboard'
 +++
 
