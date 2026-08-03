@@ -6,7 +6,7 @@ date = "2021-10-23T09:20:00Z"
 title = "Wanhao PLA Slate-Grey"
 [params]
   brand = 'Wanhao'
-  filament_type = PLA'
+  filament_type = 'PLA'
   spool_type = 'dark_plastic'
 +++
 
