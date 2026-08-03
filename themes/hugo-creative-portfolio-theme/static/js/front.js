@@ -102,6 +102,7 @@ function spoolTypeFilter() {
     var $filamentTypeDropdown = $container.find('[data-filter-control="filament_type"]');
     var $brandFilter = $brandDropdown.find('.spool-filter-dropdown-input');
     var $filamentTypeFilter = $filamentTypeDropdown.find('.spool-filter-dropdown-input');
+    var $clearButtons = $container.find('[data-clear-filter]');
     var currentFilterKey = '';
 
     // Utility function to normalize strings for comparison
@@ -275,6 +276,29 @@ function spoolTypeFilter() {
         applyFilterState(readFilterStateFromUrl(), false);
     }
 
+    // Reset all filters
+    function resetAllFilters(updateUrl) {
+        $brandFilter.val('');
+        $filamentTypeFilter.val('');
+        closeAllDropdowns();
+        currentFilterKey = '';
+        applyFilterState({
+            spool_type: '',
+            brand: '',
+            filament_type: ''
+        }, updateUrl);
+    }
+
+    // Clear the value of a specific filter
+    function clearFilterValue(filterName) {
+        if (filterName === 'brand') {
+            $brandFilter.val('');
+        }
+        if (filterName === 'filament_type') {
+            $filamentTypeFilter.val('');
+        }
+    }
+
     // Bind the brand and filament type dropdowns to their respective input fields and handle changes
     bindDropdown($brandDropdown, $brandFilter, function () {
         applyFilterState({
@@ -292,17 +316,44 @@ function spoolTypeFilter() {
         }, true);
     });
 
+        $clearButtons.on('click', function (event) {
+            event.preventDefault();
+            clearFilterValue($(this).attr('data-clear-filter'));
+            closeAllDropdowns();
+            applyFilterState({
+                spool_type: readFilterStateFromControls().spool_type,
+                brand: '',
+                filament_type:  ''
+            }, true);
+        });
+
+        $spoolOptions.closest('a').on('click', function (event) {
+            event.preventDefault();
+            closeAllDropdowns();
+
+            if ($(this).attr('data-reset-all-filters') === 'true') {
+                resetAllFilters(true);
+                return;
+            }
+            var selectedType = $(this).attr('data-spool-type-option') || '';
+            applyFilterState({
+                spool_type: selectedType,
+                brand: $brandFilter.val() || '',
+                filament_type: $filamentTypeFilter.val() || ''
+            }, true);
+        });
+
     // Update spool type filter on options click
-    $spoolOptions.closest('a').click(function (e) {
-        e.preventDefault();
-        closeAllDropdowns();
-        var selectedType = $(this).attr('data-spool-type-option') || '';
-        applyFilterState({
-            spool_type: selectedType,
-            brand: $brandFilter.val() || '',
-            filament_type: $filamentTypeFilter.val() || ''
-        }, true);
-    });
+    // $spoolOptions.closest('a').click(function (e) {
+    //     e.preventDefault();
+    //     closeAllDropdowns();
+    //     var selectedType = $(this).attr('data-spool-type-option') || '';
+    //     applyFilterState({
+    //         spool_type: selectedType,
+    //         brand: $brandFilter.val() || '',
+    //         filament_type: $filamentTypeFilter.val() || ''
+    //     }, true);
+    // });
 
     // Update brand filter on text input change
     $brandFilter.on('input change', function () {

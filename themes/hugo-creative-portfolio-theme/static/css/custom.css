@@ -27,6 +27,30 @@
 
 #spool-type-filter-container .spool-filter-control {
     min-width: 180px;
+    position: relative;
+}
+
+#spool-type-filter-container .spool-filter-control .spool-filter-dropdown-input {
+    padding-right: 4.75rem;
+}
+
+#spool-type-filter-container .spool-filter-clear {
+    position: absolute;
+    top: 50%;
+    right: 0.35rem;
+    transform: translateY(-50%);
+    border: 0;
+    background: transparent;
+    color: #777;
+    font-size: 12px;
+    line-height: 1;
+    padding: 0.2rem 0.35rem;
+}
+
+#spool-type-filter-container .spool-filter-clear:hover,
+#spool-type-filter-container .spool-filter-clear:focus {
+    color: #333;
+    outline: none;
 }
 
 #spool-type-filter-container .spool-filter-input {

@@ -20,15 +20,16 @@
             <div class="panel-body">
               <div class="spool-filter-toolbar">
                 <ul class="nav nav-pills">
-                  <li role="presentation" class="active"><a href="#" data-spool-type-option="">Show All</a></li>
-                  <li role="presentation"><a href="#cardboard" data-spool-type-option="cardboard" title="Show Cardboard Spools"><img width="32" height="32" src="{{ "icons/spool-type-cardboard.svg" | absURL }}" role="presentation"> <span class="hidden-xs">Cardboard</span></a></li>
-                  <li role="presentation"><a href="#dark_plastic" data-spool-type-option="dark_plastic" title="Show Dark Plastic Spools"><img width="32" height="32" src="{{ "icons/spool-type-dark_plastic.svg" | absURL }}" role="presentation"> <span class="hidden-xs">Dark Plastic</span></a></li>
-                  <li role="presentation"><a href="#light_plastic" data-spool-type-option="light_plastic" title="Show Light/Clear Plastic Spools"><img width="32" height="32" src="{{ "icons/spool-type-light_plastic.svg" | absURL }}" role="presentation"> <span class="hidden-xs">Light/Clear Plastic</span></a></li>
+                  <li role="presentation" class="active"><a href="#" data-spool-type-option="" data-reset-all-filters="true">Show All</a></li>
+                  <li role="presentation"><a href="" data-spool-type-option="cardboard" title="Show Cardboard Spools"><img width="32" height="32" src="{{ "icons/spool-type-cardboard.svg" | absURL }}" role="presentation"> <span class="hidden-xs">Cardboard</span></a></li>
+                  <li role="presentation"><a href="" data-spool-type-option="dark_plastic" title="Show Dark Plastic Spools"><img width="32" height="32" src="{{ "icons/spool-type-dark_plastic.svg" | absURL }}" role="presentation"> <span class="hidden-xs">Dark Plastic</span></a></li>
+                  <li role="presentation"><a href="" data-spool-type-option="light_plastic" title="Show Light/Clear Plastic Spools"><img width="32" height="32" src="{{ "icons/spool-type-light_plastic.svg" | absURL }}" role="presentation"> <span class="hidden-xs">Light/Clear Plastic</span></a></li>
                 </ul>
                 <div class="spool-filter-controls">
                   <div class="spool-filter-control spool-filter-dropdown" data-filter-control="brand">
                     <label class="sr-only" for="brand-filter-input">Brand filter</label>
                     <input id="brand-filter-input" type="text" class="form-control input-sm spool-filter-input spool-filter-dropdown-input" placeholder="Brand" autocomplete="off">
+                    <button type="button" class="spool-filter-clear" data-clear-filter="brand" aria-label="Clear brand filter">Clear</button>
                     <div class="spool-filter-dropdown-menu" role="listbox" aria-label="Brand filter options">
                       {{ range $brands }}
                         <button type="button" class="spool-filter-dropdown-option" data-value="{{ . }}">{{ . }}</button>
@@ -38,6 +39,7 @@
                   <div class="spool-filter-control spool-filter-dropdown" data-filter-control="filament_type">
                     <label class="sr-only" for="filament-type-filter-input">Filament type filter</label>
                     <input id="filament-type-filter-input" type="text" class="form-control input-sm spool-filter-input spool-filter-dropdown-input" placeholder="Filament type" autocomplete="off">
+                    <button type="button" class="spool-filter-clear" data-clear-filter="filament_type" aria-label="Clear filament type filter">Clear</button>
                     <div class="spool-filter-dropdown-menu" role="listbox" aria-label="Filament type filter options">
                       {{ range $filamentTypes }}
                         <button type="button" class="spool-filter-dropdown-option" data-value="{{ . }}">{{ . }}</button>
