@@ -95,45 +95,240 @@ function spoolTypeFilter() {
     if ($container.length === 0) {
         return;
     }
-    var currentFilter = '';
+    // Cache jQuery selectors
+    var $items = $('[data-spool-type]');
+    var $spoolOptions = $container.find('[data-spool-type-option]');
+    var $brandDropdown = $container.find('[data-filter-control="brand"]');
+    var $filamentTypeDropdown = $container.find('[data-filter-control="filament_type"]');
+    var $brandFilter = $brandDropdown.find('.spool-filter-dropdown-input');
+    var $filamentTypeFilter = $filamentTypeDropdown.find('.spool-filter-dropdown-input');
+    var currentFilterKey = '';
 
-    function setActiveFilter(filterValue, updateUrl = false) {
-        if (filterValue === currentFilter) {
+    // Utility function to normalize strings for comparison
+    function normalize(value) {
+        return (value || '').trim().toLowerCase();
+    }
+
+    // Function to close a dropdown
+    function closeDropdown($dropdown) {
+        $dropdown.removeClass('is-open');
+    }
+
+    // Function to close all dropdowns
+    function closeAllDropdowns() {
+        $brandDropdown.removeClass('is-open');
+        $filamentTypeDropdown.removeClass('is-open');
+    }
+
+    // Update dropdown options based on the entered text in the input field
+    function updateDropdownOptions($dropdown, query) {
+        var normalizedQuery = normalize(query);
+        var $options = $dropdown.find('.spool-filter-dropdown-option');
+        var visibleCount = 0;
+
+        $options.each(function () {
+            var $option = $(this);
+            var matches = !normalizedQuery || normalize($option.attr('data-value')).indexOf(normalizedQuery) !== -1;
+            $option.toggle(matches);
+            if (matches) {
+                visibleCount += 1;
+            }
+        });
+
+        $dropdown.toggleClass('has-results', visibleCount > 0);
+    }
+
+    // Function to open a dropdown and close others
+    function openDropdown($dropdown) {
+        closeAllDropdowns();
+        $dropdown.addClass('is-open');
+    }
+
+    // Bind a dropdown to its input and handle changes
+    function bindDropdown($dropdown, $input, onChange) {
+        var $options = $dropdown.find('.spool-filter-dropdown-option');
+
+        $input.on('focus click input', function () {
+            updateDropdownOptions($dropdown, $input.val());
+            openDropdown($dropdown);
+        });
+
+        $input.on('keydown', function (event) {
+            if (event.key === 'Escape') {
+                closeDropdown($dropdown);
+            }
+        });
+
+        $options.on('click', function () {
+            var value = $(this).attr('data-value') || '';
+            $input.val(value);
+            closeDropdown($dropdown);
+            onChange();
+        });
+    }
+
+    // Get the current filter state from the URL parameters
+    function readFilterStateFromUrl() {
+        var url = new URL(window.location);
+        return {
+            spool_type: url.searchParams.get('spool_type') || '',
+            brand: url.searchParams.get('brand') || '',
+            filament_type: url.searchParams.get('filament_type') || ''
+        };
+    }
+
+    // Get the current spool type filter from the controls 
+    function readFilterStateFromControls() {
+        return {
+            spool_type: $spoolOptions.filter('.active').attr('data-spool-type-option') || '',
+            brand: $brandFilter.val() || '',
+            filament_type: $filamentTypeFilter.val() || ''
+        };
+    }
+
+    // Set the active spool type based on the filter value
+    function setActiveSpoolType(filterValue) {
+        $spoolOptions.closest('li').removeClass('active');
+        $spoolOptions.filter('[data-spool-type-option="' + filterValue + '"]').parent().addClass('active');
+    }
+
+    // Apply the filter state to the UI and update the URL if needed
+    function applyFilterState(filterState, updateUrl) {
+        var normalizedState = {
+            spool_type: normalize(filterState.spool_type),
+            brand: normalize(filterState.brand),
+            filament_type: normalize(filterState.filament_type)
+        };
+        var filterKey = [normalizedState.spool_type, normalizedState.brand, normalizedState.filament_type].join('|');
+
+        if (filterKey === currentFilterKey) {
+            if (updateUrl) {
+                var currentUrl = new URL(window.location);
+                if (filterState.spool_type) {
+                    currentUrl.searchParams.set('spool_type', filterState.spool_type);
+                } else {
+                    currentUrl.searchParams.delete('spool_type');
+                }
+                if (filterState.brand) {
+                    currentUrl.searchParams.set('brand', filterState.brand);
+                } else {
+                    currentUrl.searchParams.delete('brand');
+                }
+                if (filterState.filament_type) {
+                    currentUrl.searchParams.set('filament_type', filterState.filament_type);
+                } else {
+                    currentUrl.searchParams.delete('filament_type');
+                }
+                window.history.pushState({}, '', currentUrl);
+            }
             return;
         }
 
-        var url = new URL(window.location);
-        $options.closest('li').removeClass('active');
-        $options.filter(`[href="#${filterValue}"]`).parent().addClass('active');
+        currentFilterKey = filterKey;
+        $brandFilter.val(filterState.brand);
+        $filamentTypeFilter.val(filterState.filament_type);
+        updateDropdownOptions($brandDropdown, filterState.brand);
+        updateDropdownOptions($filamentTypeDropdown, filterState.filament_type);
+        setActiveSpoolType(normalizedState.spool_type);
 
-        if (filterValue) {
-            $('[data-spool-type]').hide().removeClass('masonry-item');
-            $(`[data-spool-type="${filterValue}"]`).show().addClass('masonry-item');
-            url.searchParams.set('spool_type', filterValue);
-        } else {
-            $('[data-spool-type]').show().addClass('masonry-item');
-            url.searchParams.delete('spool_type');
-        }
+        // Show/hide items based on the filter state
+        // Hide all items first, then show only those that match the filter criteria
+        $items.hide().removeClass('masonry-item');
+        $items.filter(function () {
+            var $item = $(this);
+            var itemSpoolType = normalize($item.attr('data-spool-type'));
+            var itemBrand = normalize($item.attr('data-brand'));
+            var itemFilamentType = normalize($item.attr('data-filament-type'));
 
+            return (!normalizedState.spool_type || itemSpoolType === normalizedState.spool_type) &&
+                (!normalizedState.brand || itemBrand === normalizedState.brand) &&
+                (!normalizedState.filament_type || itemFilamentType === normalizedState.filament_type);
+        }).show().addClass('masonry-item');
+
+        // Refresh the Masonry layout after filtering
         $('.grid').masonry('reloadItems').masonry('layout');
+
+        // Update the URL parameters to reflect the current filter state
         if (updateUrl) {
+            var url = new URL(window.location);
+            if (filterState.spool_type) {
+                url.searchParams.set('spool_type', filterState.spool_type);
+            } else {
+                url.searchParams.delete('spool_type');
+            }
+            if (filterState.brand) {
+                url.searchParams.set('brand', filterState.brand);
+            } else {
+                url.searchParams.delete('brand');
+            }
+            if (filterState.filament_type) {
+                url.searchParams.set('filament_type', filterState.filament_type);
+            } else {
+                url.searchParams.delete('filament_type');
+            }
             window.history.pushState({}, '', url);
         }
-
-        currentFilter = filterValue;
     }
 
+    // Update the filter state based on the URL parameters
     function updateFilterFromUrl() {
-        var url = new URL(window.location);
-        setActiveFilter(url.searchParams.get('spool_type') || '');
+        applyFilterState(readFilterStateFromUrl(), false);
     }
 
-    // Update filter on options click
-    var $options = $container.find('a');
-    $options.click(function (e) {
+    // Bind the brand and filament type dropdowns to their respective input fields and handle changes
+    bindDropdown($brandDropdown, $brandFilter, function () {
+        applyFilterState({
+            spool_type: readFilterStateFromControls().spool_type,
+            brand: $brandFilter.val() || '',
+            filament_type: $filamentTypeFilter.val() || ''
+        }, true);
+    });
+
+    bindDropdown($filamentTypeDropdown, $filamentTypeFilter, function () {
+        applyFilterState({
+            spool_type: readFilterStateFromControls().spool_type,
+            brand: $brandFilter.val() || '',
+            filament_type: $filamentTypeFilter.val() || ''
+        }, true);
+    });
+
+    // Update spool type filter on options click
+    $spoolOptions.closest('a').click(function (e) {
         e.preventDefault();
-        var selectedType = $(this).attr('href').replace('#', '');
-        setActiveFilter(selectedType, true);
+        closeAllDropdowns();
+        var selectedType = $(this).attr('data-spool-type-option') || '';
+        applyFilterState({
+            spool_type: selectedType,
+            brand: $brandFilter.val() || '',
+            filament_type: $filamentTypeFilter.val() || ''
+        }, true);
+    });
+
+    // Update brand filter on text input change
+    $brandFilter.on('input change', function () {
+        updateDropdownOptions($brandDropdown, $brandFilter.val());
+        applyFilterState({
+            spool_type: readFilterStateFromControls().spool_type,
+            brand: $brandFilter.val() || '',
+            filament_type: $filamentTypeFilter.val() || ''
+        }, true);
+    });
+
+    // Update filament type filter on text input change
+    $filamentTypeFilter.on('input change', function () {
+        updateDropdownOptions($filamentTypeDropdown, $filamentTypeFilter.val());
+        applyFilterState({
+            spool_type: readFilterStateFromControls().spool_type,
+            brand: $brandFilter.val() || '',
+            filament_type: $filamentTypeFilter.val() || ''
+        }, true);
+    });
+
+    // Close dropdowns when clicking outside of them
+    $(document).on('click', function (event) {
+        if ($(event.target).closest('#spool-type-filter-container').length === 0) {
+            closeAllDropdowns();
+        }
     });
 
     // Update filter on page load
