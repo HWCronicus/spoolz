@@ -206,24 +206,26 @@ function spoolTypeFilter() {
 
   // Set the active filter indication in the UI 
   function setActiveFilterIndication(normalizedState) {
-    const setActiveSpoolType = (filterValue) =>{
-        $spoolOptions.closest("li").removeClass("active");
-        $spoolOptions
+    const setActiveSpoolType = (filterValue) => {
+      $spoolOptions.closest("li").removeClass("active");
+      $spoolOptions
         .filter('[data-spool-type-option="' + filterValue + '"]')
         .parent()
         .addClass("active");
-    }
-
+    };
+  
     if (normalizedState.spool_type) {
-        setActiveSpoolType(normalizedState.spool_type);
+      setActiveSpoolType(normalizedState.spool_type);
     } else if (!normalizedState.brand && !normalizedState.filament_type) {
-        setActiveSpoolType("");
+      setActiveSpoolType("");
     } else {
-        $spoolOptions.closest("li").removeClass("active");
+      $spoolOptions.closest("li").removeClass("active");
     }
     updateDropdownActiveState($brandDropdown, normalizedState.brand);
-    updateDropdownActiveState($filamentTypeDropdown, normalizedState.filament_type);
-    
+    updateDropdownActiveState(
+      $filamentTypeDropdown,
+      normalizedState.filament_type,
+    );
   }
 
   // Apply the filter state to the UI and update the URL if needed
@@ -269,15 +271,6 @@ function spoolTypeFilter() {
     $brandFilter.val(filterState.brand);
     $filamentTypeFilter.val(filterState.filament_type);
     setActiveFilterIndication(normalizedState);
-    // updateDropdownOptions($brandDropdown, filterState.brand);
-    // updateDropdownOptions($filamentTypeDropdown, filterState.filament_type);
-    // if (normalizedState.spool_type) {
-    //   setActiveSpoolType(normalizedState.spool_type);
-    // } else if (!normalizedState.brand && !normalizedState.filament_type) {
-    //   setActiveSpoolType("");
-    // } else {
-    //   $spoolOptions.closest("li").removeClass("active");
-    // }
 
     // Show/hide items based on the filter state
     // Hide all items first, then show only those that match the filter criteria
